@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="feed-candidato.component.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/8e5b938a9a.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <title>Feed do Candidato</title>
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <div class="inner-nav-bar">
+      <img src="../../../assets/images/logo.png" alt="" class="logo-header">
+      <img src="../../../assets/images/logo-conjunta.png" alt="" class="logo-header-large">
+      <nav>
+        <div class="hamburger-menu">
+          <input id="menu__toggle" type="checkbox" />
+          <label class="menu__btn" for="menu__toggle">
+            <span></span>
+          </label>
+
+          <ul class="menu__box">
+            <li><a class="menu__item" routerLink="/login">Sair</a></li>
+            <div class="profile-box">
+              <div class="card-container">
+                <span class="pro">PRO</span>
+                <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user"/>
+                <h3 class="card-name">Lexi Armstrong</h3>
+                <h6 class="card-city">New York</h6>
+                <p class="card-profesion">
+                  User interface designer and <br />
+                  front-end developer
+                </p>
+                <div class="buttons">
+                  <button class="primary">
+                    Message
+                  </button>
+                  <button class="primary ghost">
+                    Following
+                  </button>
+                </div>
+                <div class="skills">
+                  <h6>Skills</h6>
+                  <ul>
+                    <li>UI / UX</li>
+                    <li>Frontend Development</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>React</li>
+                    <li>Node</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!--<table mat-table [dataSource]="candidatos">-->
+
+<!--  <ng-container matColumnDef="name">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Nome </th>-->
+<!--    <td mat-cell *matCellDef="let candidato"> {{candidato.name}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="surname">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Sobrenome </th>-->
+<!--    <td mat-cell *matCellDef="let candidato"> {{candidato.surname}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="country">-->
+<!--    <th mat-header-cell *matHeaderCellDef> País </th>-->
+<!--    <td mat-cell *matCellDef="let candidato"> {{candidato.country}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="cpf">-->
+<!--    <th mat-header-cell *matHeaderCellDef> CPF </th>-->
+<!--    <td mat-cell *matCellDef="let candidato"> {{candidato.cpf}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="cep">-->
+<!--    <th mat-header-cell *matHeaderCellDef> CEP </th>-->
+<!--    <td mat-cell *matCellDef="let candidato"> {{candidato.cep}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+<!--  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
+<!--</table>-->
+
+<section class="feed-section">
+  <div class="profile-card-box-big-screen">
+    <div class="card-container">
+      <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user"/>
+      <h3 class="card-name">Lexi Armstrong</h3>
+      <h6 class="card-city">New York</h6>
+      <p class="card-profesion">
+        User interface designer and <br />
+        front-end developer
+      </p>
+      <div class="buttons">
+        <button class="primary">
+          Message
+        </button>
+        <button class="primary ghost">
+          Following
+        </button>
+      </div>
+      <div class="skills">
+        <h6>Skills</h6>
+        <ul>
+          <li>UI / UX</li>
+          <li>Frontend Development</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>React</li>
+          <li>Node</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="feed-box">
+    <div class="feed-header">
+      <p class="letreiro"><span class="flicker">Fe</span>ed de va<span class="fast-flicker">g</span>as</p>
+    </div>
+    <div class="wraper-vagas">
+      <ul class="vagas-box">
+        <li class="vaga"  style="cursor: pointer;" (click)="changeDescBox()" *ngFor="let dados of (vagas | async)" >
+          <h3 class="nome-vaga">{{dados.nome}}</h3>
+          <div class="vaga-content">
+            <span class="local-vaga"><img src="../../../assets/images/earth-americas-solid.svg" alt="" class="icon-empresa">{{dados.cidade}} ,{{dados.estado}}</span>
+            <span class="salario-vaga"><img src="../../../assets/images/money-bill-solid.svg" alt="" class="icon-empresa">Até R$2500</span>
+            <span class="nivel-vaga"><img src="../../../assets/images/arrow-turn-up-solid.svg" alt="" class="icon-empresa">Junior</span>
+            <span class="outside-work"><img src="../../../assets/images/plane-solid.svg" alt="" class="icon-empresa">Aceita candidatos de fora</span>
+            <span class="descricao-vaga-span"><img src="../../../assets/images/quote-left-solid.svg" alt="" class="icon-empresa">{{dados.descricao}}</span>
+          </div>
+          <div class="tag-list">
+            <span class="tag-list-item"><p>{{dados.competencias}}</p></span>
+          </div>
+        </li>
+      </ul>
+      <div class="descricao-box">
+        <div class="vaga-content-descricao">
+          <h3 class="formacao-candidato-descricao">Selecione uma vaga</h3>
+          <p class="descricao-vaga-big-box">Selecione uma vaga</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+::ng-deep * {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: url("../../../assets/images/bg-stars.svg"),url("../../../assets/images/bg-stars.svg"),black;
+  background-repeat: repeat, repeat;
+  background-size: 250%, 150%;
+  background-position: 0 0, 0 0;
+  animation: animatedBackground 60s linear infinite;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+* img {
+  max-width: 6ch;
+}
+/* Header */
+.logo-header {
+  width: 15ch;
+}
+.logo-header-large {
+  display: none;
+}
+.testimonial-name, .testimonial-description, .social-media-box h3 {
+  color: white;
+}
+.innerNavBar {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 2ch;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.button-login-header {
+  text-decoration: none;
+  color: #6c33a3;
+  padding: 1ch 2ch;
+  background-color: white;
+  font-weight: 600;
+  border-radius: 1ch;
+  letter-spacing: 1px;
+  max-height: 4ch;
+}
+/* Hero */
+.hero-section {
+  background: url("../../../assets/images/bg-hero-landingpage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.hero {
+  box-shadow: 0 0  1000px 500px  inset rgba(0, 0, 0, 0.57);
+  text-align: center;
+  padding: 15ch 2ch 10ch;
+  height: 100vh;
+
+}
+.callout-hero {
+  color: white;
+  font-size: 35px;
+  margin-bottom: 2ch;
+  letter-spacing: 2px;
+  margin-top: 2ch;
+}
+.register-button-hero {
+  text-decoration: none;
+  padding: 1.5ch 3.5ch;
+  background-color: white;
+  border-radius: 5ch;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 2ch;
+  color: white;
+  background: linear-gradient(124deg, rgb(108, 51, 163), #d501d5);
+  background-size: 500% 100%;
+  -webkit-animation: pulsate 7s ease infinite;
+  -moz-animation: pulsate 7s ease infinite;
+  animation: pulsate 7s ease infinite;
+}
+.button-box-hero {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-top: 8ch;
+}
+.login-button-hero {
+  padding: 1.5ch 3.5ch;
+  border: 2px solid white;
+  margin: 02ch;
+  border-radius: 5ch;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: url("../../../assets/images/testaaa.jpg"), black;
+  background-size: 200%, 100%;
+  background-repeat: repeat, repeat;
+  background-position: 0 0;
+  animation: animatedBackground 40s linear infinite;
+}
+/* Testimonial */
+.testimonial-slider {
+  padding: 2ch 1ch;
+}
+.testimonial-items {
+  border: 1px solid white;
+  border-radius: 1ch;
+  padding: 1.5ch;
+  margin-bottom: 2ch;
+  background: url("../../../assets/images/quotemark.png");
+  background-repeat: no-repeat;
+  background-size: 10%;
+  background-position: 95% 20%;
+  box-shadow: 7px 10px 15px 0 rgba(108, 51, 163, 0.41);
+
+}
+.benefits-box p {
+  color: white;
+}
+.testimonial-wraper {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+  width: 25ch;
+  padding-bottom: .5ch;
+}
+.testimonial-description {
+  margin: 2ch 0 0 0 ;
+  line-height: 2.5ch;
+}
+.callout-testimonial {
+  text-align: center;
+  margin: 2ch auto;
+  padding: 0 0 1ch 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.51);
+  width: 60%;
+  color: white;
+}
+/* Rede social */
+.social-media-box {
+  padding: 2ch;
+}
+.social-media-list {
+  text-align: center;
+}
+.social-media-wraper a {
+  text-decoration: none;
+  color: black;
+}
+.social-media-wraper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5ch;
+}
+.fa-github, .fa-linkedin {
+  padding: 0 1ch;
+  color: white;
+}
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 900px) {
+  .logo-header {
+    display: none;
+  }
+  .logo-header-large {
+    display: block;
+    max-width: 100ch;
+    width: 25ch;
+  }
+  .hero {
+    box-shadow: 0 0  600px 500px  inset rgba(0, 0, 0, 0.57);
+  }
+  .callout-hero {
+    font-size: 100px;
+    margin: 1ch 0 0;
+  }
+  .testimonial-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .testimonial-items {
+    max-width: 22ch;
+    background-position: 95% 10%;
+  }
+  .testimonial-wraper {
+    max-width: 15ch;
+  }
+  .register-button-hero, .login-button-hero {
+    width: 30ch;
+  }
+  .register-button-hero {
+    background-color: #6c33a3;
+    color: white;
+  }
+  .button-box-hero {
+    align-items: center;
+  }
+
+}
+@media only screen and (min-width: 1100px) {
+  .testimonial-items {
+    max-width: 30%;
+  }
+  .testimonial-wraper {
+    max-width: 70%;
+  }
+  .testimonial-items {
+    padding-bottom: 5%;
+  }
+  .hero {
+    box-shadow: 0 0  600px 500px  inset rgba(0, 0, 0, 0.57);
+
+  }
+}
+
+/* Hovers */
+.button-login-header:hover {
+  background-color: #6c33a3;
+  color: white;
+}
+.fa-github:hover, .fa-linkedin:hover {
+  color: #6c33a3;
+}
+
+/* benefits */
+.benefits-section {
+  padding: 2ch;
+  text-align: center;
+}
+.benefits-box {
+  padding: 1ch;
+  font-weight: 700;
+  font-size: 18px;
+}
+.benefits-items {
+  text-align: center;
+  margin: 0;
+  width: auto;
+}
+.benefits-items-box {
+  margin-top: 5ch;
+  display: flex;
+  flex-direction: column;
+}
+.benefits-items-box img {
+  height: 55px;
+  transform:rotate(-45deg);
+}
+.cacon-img {
+  padding: 2ch;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  border-image:
+    linear-gradient(to bottom, #6c33a3, white) 1;
+  border-top: 3px solid #6c33a3;
+  border-left: 3px solid #6c33a3;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform:rotate(45deg);
+  display: flex;
+  justify-content: center;
+}
+.cacon-img img {
+  align-self: center;
+}
+.benefits-items h4 {
+  margin: 5ch 0 1ch 0 ;
+  color: white;
+  white-space: nowrap;
+}
+.benefits-items p {
+  margin-bottom: 5ch;
+  font-weight: 400;
+  line-height: 3ch;
+  color: white;
+}
+.benefits-items {
+  width: 20ch;
+  margin: 0 auto;
+}
+.benefits-box a {
+  font-size: 14px;
+}
+@media only screen and (min-width: 600px) {
+  .benefits-items-box {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 8ch 0 5ch 0;
+    justify-content: space-around;
+  }
+  .benefits-items {
+    margin: 0 2ch;
+  }
+
+}
+.social-media-wraper {
+  justify-content: center;
+}
+.social-media-wraper a {
+  width: 5ch;
+  height: 5ch;
+  margin: 0 2ch;
+}
+.social-media-wraper a img {
+  -webkit-filter: invert(100%); /* Safari/Chrome */
+  filter: invert(100%);
+}
+@-webkit-keyframes pulsate {
+  0%{background-position:0 52%}
+  50%{background-position:100% 49%}
+  100%{background-position:0 52%}
+}
+@-moz-keyframes pulsate {
+  0%{background-position:0 52%}
+  50%{background-position:100% 49%}
+  100%{background-position:0 52%}
+}
+@keyframes pulsate {
+  0%{background-position:0 52%}
+  50%{background-position:100% 49%}
+  100%{background-position:0 52%}
+}
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+.logo-header-large {
+  max-width: 20ch !important;
+}
+
