@@ -36,3 +36,9 @@ Agora eu envio o objeto, comuniando tudo com as apis usando o spring.
 
 Basicamente o que falta tudo é dependente do Login, com o login você poderia ver quais são as vagas da SUA empresa, e ai apagar, atualizar, etc... O mesmo vale para os candidatos.
 Aconteceu uma refatoração básica do front, coisas da parte do design, coloquei umas animações. 
+
+
+# Spock
+
+Adição do Spock para testes unitários, nada além disso foi adicionado ou retirado, salve algumas linhas do back-end para retorno de objetos. 
+Com certeza deve estar faltando alguma coisa que eu simplesmente me esqueci de adicionar aos testes, mas vou assumir que está tudo certo pelo fato de todos passarem.
