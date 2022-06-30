@@ -59,5 +59,4 @@ public class Candidato {
     @Column
     private String descricao;
 
-
 }

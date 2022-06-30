@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 public class InserirEmpresas {
-    public static void registrarEmpresas(String nomeEmpresa, String emailEmpresa, String cnpjEmpresa, String paisEmpresa, String cepEmpresa, String senhaEmpresa) {
+    public static String registrarEmpresas(String nomeEmpresa, String emailEmpresa, String cnpjEmpresa, String paisEmpresa, String cepEmpresa, String senhaEmpresa) {
         String INSERIR_EMPRESAS = "INSERT INTO empresas(nome, email, cnpj, pais, cep, senha) VALUES(?,?,?,?,?,?)";
 
         try {
@@ -21,10 +21,12 @@ public class InserirEmpresas {
             salvarEmpresa.executeUpdate();
             salvarEmpresa.close();
             System.out.println("A empresa foi inserida com sucesso");
+            return "A empresa foi inserida com sucesso";
         } catch(Exception e) {
             e.printStackTrace();
             System.err.println("Erro inserindo empresa");
             System.exit(-42);
         }
+        return INSERIR_EMPRESAS;
     }
 }

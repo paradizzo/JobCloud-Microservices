@@ -66,8 +66,8 @@ public class CandidatoController {
         String pythonCandidato = candidato.getPython();
         String typescriptCandidato = candidato.getTypescript();
         InserirCandidatos.registrarCandidatos(nomeCandidato,  sobrenome,  nascimentoCandidato, emailCandidato,  cpfCandidato,  paisCandidato,  cepCandidato, formacaoCandidato, descricaoCandidato, senhaCandidato, angularCandidato, javaCandidato,  groovyCandidato,  pythonCandidato, typescriptCandidato);
-
-            return candidatoRepository.save(candidato);
+        candidatoRepository.save(candidato);
+        return  candidato;
     }
 
 }

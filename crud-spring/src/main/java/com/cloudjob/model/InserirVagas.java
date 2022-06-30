@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class InserirVagas {
-    public static void registrarVagas(String nomeVaga, String localVaga, String estadoVaga, String descricaoVaga, String angularVaga, String javaVaga, String groovyVaga, String pythonVaga, String typescriptVaga) {
+    public static String registrarVagas(String nomeVaga, String localVaga, String estadoVaga, String descricaoVaga, String angularVaga, String javaVaga, String groovyVaga, String pythonVaga, String typescriptVaga) {
         String LAST_VAGA = "SELECT MAX(id) FROM vagas;";
         String EMPRESA_ID = "SELECT MAX(id) FROM empresas";
         String INSERIR_VAGAS = "INSERT INTO vagas(nome, descricao, estado, cidade, id_empresas) VALUES(?,?,?,?,?)";
@@ -66,6 +66,7 @@ public class InserirVagas {
 
             salvarVaga.close();
             System.out.println("A vaga foi inserida com sucesso");
+            return "A vaga foi inserida com sucesso";
 
         } catch(Exception e) {
             e.printStackTrace();
@@ -73,5 +74,6 @@ public class InserirVagas {
             System.exit(-42);
         }
 
+        return LAST_VAGA;
     }
 }

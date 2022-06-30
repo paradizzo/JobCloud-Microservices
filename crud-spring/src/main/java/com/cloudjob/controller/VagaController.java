@@ -64,7 +64,7 @@ public class VagaController {
         String pythonVaga = vaga.getPython();
         String typescriptVaga = vaga.getTypescript();
         InserirVagas.registrarVagas( nomeVaga,  localVaga,  estadoVaga,  descricaoVaga,  angularVaga,  javaVaga,  groovyVaga,  pythonVaga,  typescriptVaga);
-
-        return vagaRepository.save(vaga);
+        vagaRepository.save(vaga);
+        return  vaga;
     }
 }

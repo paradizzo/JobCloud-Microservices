@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class InserirCandidatos {
 
 
-    public static void registrarCandidatos(String nomeCandidato, String sobrenome, String nascimentoCandidato, String emailCandidato, String cpfCandidato, String paisCandidato, String cepCandidato, String formacaoCandidato, String descricaoCandidato, String senhaCandidato, String angularCandidato, String javaCandidato, String groovyCandidato, String pythonCandidato, String typescriptCandidato) {
+    public static String registrarCandidatos(String nomeCandidato, String sobrenome, String nascimentoCandidato, String emailCandidato, String cpfCandidato, String paisCandidato, String cepCandidato, String formacaoCandidato, String descricaoCandidato, String senhaCandidato, String angularCandidato, String javaCandidato, String groovyCandidato, String pythonCandidato, String typescriptCandidato) {
 
         // Declaração de variaveis
         String LAST_CANDIDATO = "SELECT MAX(id) FROM candidatos;";
@@ -83,7 +83,7 @@ public class InserirCandidatos {
             ultimoID.close();
             salvarCandidato.close();
             aplicarCompetencias.close();
-            System.out.println("O candidato foi inserido com sucesso");
+            return "O candidato foi inserido com sucesso";
 
 
         } catch(Exception e) {
@@ -91,5 +91,6 @@ public class InserirCandidatos {
             System.err.println("Erro inserindo candidatos");
             System.exit(-42);
         }
+        return LAST_CANDIDATO;
     }
 }

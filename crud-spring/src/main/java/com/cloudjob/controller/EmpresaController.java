@@ -57,8 +57,8 @@ public class EmpresaController {
         String cepEmpresa = empresa.getCep();
         String senhaEmpresa = empresa.getSenha();
         InserirEmpresas.registrarEmpresas(nomeEmpresa, emailEmpresa, cnpjEmpresa, paisEmpresa, cepEmpresa, senhaEmpresa);
-
-        return empresaRepository.save(empresa);
+        empresaRepository.save(empresa);
+        return empresa;
     }
 
 }
