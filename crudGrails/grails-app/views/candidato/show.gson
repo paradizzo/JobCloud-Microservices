@@ -1,0 +1,5 @@
+model {
+	Candidato candidato
+}
+
+json tmpl.candidato(candidato)

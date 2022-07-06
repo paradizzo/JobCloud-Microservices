@@ -1,0 +1,8 @@
+import crudgrails.Vagas
+
+model {
+	Iterable<Vagas> vagaList
+}
+
+json tmpl.vaga(vagaList ?: [])
+

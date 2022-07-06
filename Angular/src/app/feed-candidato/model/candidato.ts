@@ -9,5 +9,9 @@ export interface Candidato {
   "pais":string,
   "descricao":string,
   "senha":string,
-  "competencias":string
+  "angular": boolean
+  "groovy": boolean
+  "java": boolean
+  "typescript": boolean
+  "python": boolean
 }

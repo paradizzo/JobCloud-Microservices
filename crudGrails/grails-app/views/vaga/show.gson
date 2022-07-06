@@ -1,0 +1,7 @@
+import crudgrails.Vagas
+
+model {
+	Vagas vaga
+}
+
+json tmpl.vaga(vaga)

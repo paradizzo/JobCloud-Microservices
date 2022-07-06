@@ -1,0 +1,7 @@
+import crudgrails.Empresas
+
+model {
+	Empresas empresa
+}
+
+json g.render(empresa, [resolveTemplate: false])

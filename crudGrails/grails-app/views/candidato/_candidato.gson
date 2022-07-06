@@ -1,0 +1,5 @@
+model {
+	Candidato candidato
+}
+
+json g.render(candidato, [resolveTemplate: false])

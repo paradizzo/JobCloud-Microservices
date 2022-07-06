@@ -17,11 +17,11 @@ export class RegisterVagaComponent implements OnInit {
       estado:[null],
       cidade: [null],
       descricao: [null],
-      angular: [null],
-      groovy: [null],
-      python: [null],
-      java: [null],
-      typescript: [null]
+      angular: [false],
+      groovy: [false],
+      python: [false],
+      java: [false],
+      typescript: [false]
     })
   }
 

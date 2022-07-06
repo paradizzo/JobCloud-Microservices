@@ -26,11 +26,11 @@ export class RegisterPageComponent implements OnInit {
       cep: [null],
       pais: [null],
       senha: [null],
-      angular: [null],
-      groovy: [null],
-      python: [null],
-      java: [null],
-      typescript: [null]
+      angular: [false],
+      groovy: [false],
+      python: [false],
+      java: [false],
+      typescript: [false]
     })
     this.formEmpresa = this.formBuilder.group( {
       nome: [null],

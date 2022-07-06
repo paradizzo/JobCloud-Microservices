@@ -1,0 +1,7 @@
+import crudgrails.Candidatos
+
+model {
+	Candidatos candidatos
+}
+
+json g.render(candidatos, [resolveTemplate: false])

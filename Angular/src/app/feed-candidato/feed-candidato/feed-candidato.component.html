@@ -148,7 +148,11 @@
             <span class="descricao-vaga-span"><img src="../../../assets/images/quote-left-solid.svg" alt="" class="icon-empresa">{{dados.descricao}}</span>
           </div>
           <div class="tag-list">
-            <span class="tag-list-item"><p>{{dados.competencias}}</p></span>
+            <span class="tag-list-item" id="angular" *ngIf="dados.angular == true"><p>Angular</p></span>
+            <span class="tag-list-item" id="python" *ngIf="dados.python == true"><p>Python</p></span>
+            <span class="tag-list-item" id="typescript "*ngIf="dados.typescript == true"><p>Typescript</p></span>
+            <span class="tag-list-item" id="java" *ngIf="dados.java == true"><p>Java</p></span>
+            <span class="tag-list-item" id="groovy" *ngIf="dados.groovy == true"><p>Groovy</p></span>
           </div>
         </li>
       </ul>
@@ -156,6 +160,11 @@
         <div class="vaga-content-descricao">
           <h3 class="formacao-candidato-descricao">Selecione uma vaga</h3>
           <p class="descricao-vaga-big-box">Selecione uma vaga</p>
+          <p class="big-box-skills" id="angular-bigbox"></p>
+          <p class="big-box-skills" id="groovy-bigbox"></p>
+          <p class="big-box-skills" id="java-bigbox"></p>
+          <p class="big-box-skills" id="python-bigbox"></p>
+          <p class="big-box-skills" id="typescript-bigbox"></p>
         </div>
       </div>
     </div>

@@ -40,8 +40,18 @@ export class FeedCandidatoComponent implements OnInit {
     $(".vaga").click(function (){
         let formacaoCandidato = $(this).children(".nome-vaga").text()
         let descricaoCandidato = $(this).find('.descricao-vaga-span').text()
+        let angularCandidato = $(this).children(".tag-list").children('#angular').text()
+        let pythonCandidato = $(this).children(".tag-list").children('#python').text()
+        let groovyCandidato = $(this).children(".tag-list").children('#groovy').text()
+        let typescriptCandidato = $(this).children(".tag-list").children('#typescript').text()
+        let javaCandidato = $(this).children(".tag-list").children('#java').text()
         $('.formacao-candidato-descricao').text(formacaoCandidato)
-        $('.descricao-vaga-big-box').text(descricaoCandidato)
+        $('.vaga-content-descricao').children('p').text(descricaoCandidato)
+        $('.vaga-content-descricao').children('#angular-bigbox').text(angularCandidato)
+        $('.vaga-content-descricao').children('#groovy-bigbox').text(groovyCandidato)
+        $('.vaga-content-descricao').children('#python-bigbox').text(pythonCandidato)
+        $('.vaga-content-descricao').children('#java-bigbox').text(javaCandidato)
+        $('.vaga-content-descricao').children('#typescript-bigbox').text(typescriptCandidato)
       })
     }
 }

@@ -1,0 +1,7 @@
+import crudgrails.Vagas
+
+model {
+	Vagas vaga
+}
+
+json g.render(vaga, [resolveTemplate: false])

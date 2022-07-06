@@ -1,0 +1,8 @@
+import crudgrails.Candidatos
+
+model {
+	Iterable<Candidatos> candidatosList
+}
+
+json tmpl.candidatos(candidatosList ?: [])
+

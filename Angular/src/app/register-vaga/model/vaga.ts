@@ -5,5 +5,9 @@ export interface Vaga {
   "cidade":string,
   "estado":string,
   "descricao":string,
-  "competencias":string
+  "angular": boolean
+  "groovy": boolean
+  "java": boolean
+  "typescript": boolean
+  "python": boolean
 }

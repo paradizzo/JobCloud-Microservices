@@ -86,8 +86,19 @@ export class FeedEmpresaComponent implements OnInit {
     $(".candidato").click(function (){
       let formacaoCandidato = $(this).children(".formacao-candidato").text()
       let descricaoCandidato = $(this).children(".descricao-candidato").text()
+      let angularCandidato = $(this).children(".skills-box").children('#angular').text()
+      let pythonCandidato = $(this).children(".skills-box").children('#python').text()
+      let groovyCandidato = $(this).children(".skills-box").children('#groovy').text()
+      let typescriptCandidato = $(this).children(".skills-box").children('#typescript').text()
+      let javaCandidato = $(this).children(".skills-box").children('#java').text()
+
       $('.formacao-candidato-descricao').text(formacaoCandidato)
       $('.descricao-candidato-box').children('p').text(descricaoCandidato)
+      $('.descricao-candidato-box').children('#angular-bigbox').text(angularCandidato)
+      $('.descricao-candidato-box').children('#groovy-bigbox').text(groovyCandidato)
+      $('.descricao-candidato-box').children('#python-bigbox').text(pythonCandidato)
+      $('.descricao-candidato-box').children('#java-bigbox').text(javaCandidato)
+      $('.descricao-candidato-box').children('#typescript-bigbox').text(typescriptCandidato)
     })
   }
 }

@@ -1,0 +1,8 @@
+import crudgrails.Empresas
+
+model {
+	Iterable<Empresas> empresasList
+}
+
+json tmpl.empresas(empresasList ?: [])
+

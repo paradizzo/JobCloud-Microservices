@@ -1,0 +1,7 @@
+import crudgrails.Candidatos
+
+model {
+	Candidatos candidatos
+}
+
+json tmpl.candidatos(candidatos)

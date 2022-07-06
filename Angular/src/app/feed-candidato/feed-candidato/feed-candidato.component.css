@@ -177,18 +177,22 @@ header {
   font-weight: 600;
   justify-content: center;
 }
-.tag-list-item {
+.tag-list-item , .big-box-skills {
   padding: .5ch 1ch;
   background-color: #969696;
   border-radius: 1ch;
   letter-spacing: 1px;
-  margin: .5ch 0;
+  margin: 0.5ch;
+  min-width: 100px;
+  text-align: center;
 }
-.tag-list-item p  {
+.tag-list-item p  , .big-box-skills{
   text-decoration: none;
   color: black;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 /* Profile card */
 
@@ -308,6 +312,22 @@ button.primary.ghost {
     0 0 0.8rem rgba(188, 19, 254, 0.29),
     0 0 2.8rem rgba(188, 19, 254, 0.29),
     inset 0 0 1.3rem rgba(188, 19, 254, 0.29);
+  }
+  .vaga-content-descricao h3  {
+    margin: 0 0 1ch 0;
+  }
+  .descricao-vaga-big-box {
+    margin: 0 0 2ch 0;
+  }
+  .big-box-skills {
+    margin:  0 0 1.5ch 0;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem rgba(188, 19, 254, 0.29),
+    0 0 0.8rem rgba(188, 19, 254, 0.29),
+    0 0 2.8rem rgba(188, 19, 254, 0.29),
+    inset 0 0 1.3rem rgba(188, 19, 254, 0.29);
+    color: white;
   }
   .descricao-vaga {
     margin: .5ch 0;

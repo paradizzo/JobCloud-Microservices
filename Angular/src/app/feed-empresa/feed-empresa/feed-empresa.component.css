@@ -146,14 +146,32 @@ header {
   flex-wrap: wrap;
   margin: 1ch 0;
 }
-.skills {
-  padding: 0.5ch 1ch;
-  background-color: #b6b6b6;
-  border-radius: 3ch;
+.skills , .big-box-skills{
+  padding: .5ch 1ch;
+  background-color: #969696;
+  border-radius: 1ch;
   letter-spacing: 1px;
-  margin: 0.5ch 0.5ch;
+  margin: 0.5ch;
+  min-width: 100px;
+  text-align: center;
+}
+.big-box-skills {
+  margin:  0 0 1.5ch 0;
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem rgba(188, 19, 254, 0.29),
+  0 0 0.8rem rgba(188, 19, 254, 0.29),
+  0 0 2.8rem rgba(188, 19, 254, 0.29),
+  inset 0 0 1.3rem rgba(188, 19, 254, 0.29);
+  color: white !important;
+}
+.skills p , .big-box-skills {
+  text-decoration: none;
   color: black;
-  font-weight: 600;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 .atributos-candidato {
   display: flex;
@@ -276,7 +294,6 @@ span.progress {
     margin: 0 auto;
   }
   .descricao-candidato-box {
-    display: block;
     padding: 2ch 4ch;
     max-height: 30ch;
     max-width: 240px;
@@ -284,6 +301,9 @@ span.progress {
     box-shadow:  0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem rgb(188 19 254 / 29%), 0 0 0.8rem rgb(188 19 254 / 29%), 0 0 2.8rem rgb(188 19 254 / 29%), inset 0 0 1.3rem rgb(188 19 254 / 29%);
     border-radius: 2ch;
     margin: 0 0 0 2ch;
+    display: flex;
+    flex-direction: column;
+
   }
   .feed-candidato-descricao-box {
     display: flex;
@@ -291,6 +311,13 @@ span.progress {
   }
   .formacao-candidato-descricao {
     margin: 0 0 1ch 0;
+  }
+  .descricao-bigbox {
+    margin: 0 0 2ch 0 ;
+  }
+  .big-box-skills {
+    margin: 0 0 1ch 0 ;
+
   }
 }
 @media only screen and (min-width: 1350px) {

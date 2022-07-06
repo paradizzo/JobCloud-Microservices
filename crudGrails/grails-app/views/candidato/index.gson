@@ -1,0 +1,6 @@
+model {
+	Iterable<Candidato> candidatoList
+}
+
+json tmpl.candidato(candidatoList ?: [])
+
