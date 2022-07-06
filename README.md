@@ -48,3 +48,6 @@ Com certeza deve estar faltando alguma coisa que eu simplesmente me esqueci de a
 
 Adição do crud com grails, basicamente a mesma coisa do Spring, criação dos endpoints por grails, algumas mudanças tiveram de ser feitas ( Ou o GRAILS FEZ SOZINHO ) ao banco de dados, então mudei o banco de dados temporariamente, provavlemente até a trilha de Micronaut, onde ficará em sua forma definitiva. 
 Mudei também algumas coisas no front end, mas ainda sem login, provavelmente a versão final virá em micronaut, que até o fim da semana estará pronto.
+
+Uma  coisa que esqueci de comentar que vale para todas as trilhas, quando for rodar a aplicação em Angular, não use o ng serve, use ng serve --proxy-config proxy.conf.js 
+Isso vai evitar problema de CORS.
