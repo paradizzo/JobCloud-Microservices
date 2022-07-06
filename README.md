@@ -42,3 +42,9 @@ Aconteceu uma refatoração básica do front, coisas da parte do design, coloque
 
 Adição do Spock para testes unitários, nada além disso foi adicionado ou retirado, salve algumas linhas do back-end para retorno de objetos. 
 Com certeza deve estar faltando alguma coisa que eu simplesmente me esqueci de adicionar aos testes, mas vou assumir que está tudo certo pelo fato de todos passarem.
+
+
+# Grails
+
+Adição do crud com grails, basicamente a mesma coisa do Spring, criação dos endpoints por grails, algumas mudanças tiveram de ser feitas ( Ou o GRAILS FEZ SOZINHO ) ao banco de dados, então mudei o banco de dados temporariamente, provavlemente até a trilha de Micronaut, onde ficará em sua forma definitiva. 
+Mudei também algumas coisas no front end, mas ainda sem login, provavelmente a versão final virá em micronaut, que até o fim da semana estará pronto.
