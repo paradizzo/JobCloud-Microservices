@@ -49,6 +49,7 @@ Com certeza deve estar faltando alguma coisa que eu simplesmente me esqueci de a
 
 Adição do Swagger, a documentação está conjunta porém com alguns adendos. 
 Como o Grails estava mal configurado, durante a criação do mesmo as configurações estavam em Create-Drop, o que fez meu Postgres dropar algumas tables, a refatoração terá de ser feita no Micronaut.
+
 ## Swagger + Grails 
 - POST
 - PUT
@@ -72,4 +73,3 @@ Mudei também algumas coisas no front end, mas ainda sem login, provavelmente a 
 
 Uma  coisa que esqueci de comentar que vale para todas as trilhas, quando for rodar a aplicação em Angular, não use o ng serve, use ng serve --proxy-config proxy.conf.js 
 Isso vai evitar problema de CORS.
->>>>>>> 26d50745fcee980b430eb40ae43a7d56e50c6552
