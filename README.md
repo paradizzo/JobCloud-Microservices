@@ -42,3 +42,24 @@ Aconteceu uma refatoração básica do front, coisas da parte do design, coloque
 
 Adição do Spock para testes unitários, nada além disso foi adicionado ou retirado, salve algumas linhas do back-end para retorno de objetos. 
 Com certeza deve estar faltando alguma coisa que eu simplesmente me esqueci de adicionar aos testes, mas vou assumir que está tudo certo pelo fato de todos passarem.
+
+
+# Swagger
+
+Adição do Swagger, a documentação está conjunta porém com alguns adendos. 
+Como o Grails estava mal configurado, durante a criação do mesmo as configurações estavam em Create-Drop, o que fez meu Postgres dropar algumas tables, a refatoração terá de ser feita no Micronaut.
+## Swagger + Grails 
+- POST
+- PUT
+- DELETE
+- GETBYID
+- GETALL
+
+## Swagger + Spring
+
+- POST
+- GETALL
+
+Como eu fiz o Spring antes, e era obrigatoriedade apenas esses dois métodos, esses são os que ficarão, pelo fato do restrição de tempo e de que provavelmente eu não usarei o Spring futuramente, tendo preferido muito mais o Grails. 
+Algumas refatorações foram feitas no Spring para se adequarem ao " novo banco de dados ", leia essa frase com muitas aspas.
+A parte do Swagger que corresponde ao: securityDefinitions não foi alterado do próprio Swagger editor.

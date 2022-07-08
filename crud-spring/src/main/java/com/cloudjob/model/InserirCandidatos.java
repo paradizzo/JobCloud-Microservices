@@ -17,7 +17,7 @@ public class InserirCandidatos {
 
         // Declaração de variaveis
         String LAST_CANDIDATO = "SELECT MAX(id) FROM candidatos;";
-        String INSERIR_CANDIDATOS = "INSERT INTO candidatos(nome, sobrenome, data_de_nascimento, email, cpf, pais, cep, descricao, senha) VALUES(?,?,?,?,?,?,?,?,?) ";
+        String INSERIR_CANDIDATOS = "INSERT INTO candidatos(nome, sobrenome, data_de_nascimento, email, cpf, pais, cep, descricao, senha, angular, java, groovy, python, typescript) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
         ArrayList<String> arrayCompetencias = new ArrayList<String>();
 
         try {
@@ -39,6 +39,40 @@ public class InserirCandidatos {
             salvarCandidato.setString(7,cepCandidato);
             salvarCandidato.setString(8,descricaoCandidato);
             salvarCandidato.setString(9,senhaCandidato);
+            if (angularCandidato != null){
+                if (angularCandidato.equals("true")){
+                    salvarCandidato.setBoolean(10, true);
+                }
+                else salvarCandidato.setBoolean(10, false);
+            }
+            if (javaCandidato != null){
+                if (javaCandidato.equals("true")){
+                    salvarCandidato.setBoolean(11, true);
+                }
+                else salvarCandidato.setBoolean(11, false);
+            }
+            if (groovyCandidato != null){
+                if (groovyCandidato.equals("true")){
+                    salvarCandidato.setBoolean(12, true);
+                }
+                else salvarCandidato.setBoolean(12, false);
+            }
+            if (pythonCandidato != null){
+                if (pythonCandidato.equals("true")){
+                    salvarCandidato.setBoolean(13, true);
+                }
+                else salvarCandidato.setBoolean(13, false);
+            }
+            if (typescriptCandidato != null){
+                if (typescriptCandidato.equals("true")){
+                    salvarCandidato.setBoolean(14, true);
+                }
+                else salvarCandidato.setBoolean(14, false);
+            }
+
+
+
+
 
 
 
@@ -53,36 +87,36 @@ public class InserirCandidatos {
             }
 
             competencias.listarCompetencias(ULTIMO_ID_INT, callerString, angularCandidato, javaCandidato, groovyCandidato, pythonCandidato, typescriptCandidato);
-            String SELECIONAR_COMPETENCIAS = "SELECT * FROM candidatos_has_competencias WHERE candidatos_id =(SELECT max(candidatos_id) FROM candidatos_has_competencias )";
-            PreparedStatement salvarCompetencias = conn.prepareStatement(SELECIONAR_COMPETENCIAS);
-            ResultSet resCompetencias = salvarCompetencias.executeQuery();
-            while (resCompetencias.next()) {
-                String valorCompetencia = resCompetencias.getString(2);
-                if (valorCompetencia.equals("1")) {
-                    arrayCompetencias.add("Angular");
-                }
-                else if (valorCompetencia.equals("2")) {
-                    arrayCompetencias.add("Java");
-                }
-                else if (valorCompetencia.equals("3")) {
-                    arrayCompetencias.add("Groovy");
-                }
-                else if (valorCompetencia.equals("4")) {
-                    arrayCompetencias.add("Python");
-                } else {
-                    arrayCompetencias.add("Typescript");
-                }
-            }
-            String listString = String.join(", ", arrayCompetencias);
-            String APLICADOR_COMPETENCIAS =  "UPDATE candidatos SET competencias=? WHERE ID = ?";
-            PreparedStatement aplicarCompetencias = conn.prepareStatement(APLICADOR_COMPETENCIAS);
-            aplicarCompetencias.setString(1, listString);
-            aplicarCompetencias.setInt(2, ULTIMO_ID_INT);
-            aplicarCompetencias.executeUpdate();
+//            String SELECIONAR_COMPETENCIAS = "SELECT * FROM candidatos_has_competencias WHERE candidatos_id =(SELECT max(candidatos_id) FROM candidatos_has_competencias )";
+//            PreparedStatement salvarCompetencias = conn.prepareStatement(SELECIONAR_COMPETENCIAS);
+//            ResultSet resCompetencias = salvarCompetencias.executeQuery();
+//            while (resCompetencias.next()) {
+//                String valorCompetencia = resCompetencias.getString(2);
+//                if (valorCompetencia.equals("1")) {
+//                    arrayCompetencias.add("Angular");
+//                }
+//                else if (valorCompetencia.equals("2")) {
+//                    arrayCompetencias.add("Java");
+//                }
+//                else if (valorCompetencia.equals("3")) {
+//                    arrayCompetencias.add("Groovy");
+//                }
+//                else if (valorCompetencia.equals("4")) {
+//                    arrayCompetencias.add("Python");
+//                } else {
+//                    arrayCompetencias.add("Typescript");
+//                }
+//            }
+//            String listString = String.join(", ", arrayCompetencias);
+//            String APLICADOR_COMPETENCIAS =  "UPDATE candidatos SET competencias=? WHERE ID = ?";
+//            PreparedStatement aplicarCompetencias = conn.prepareStatement(APLICADOR_COMPETENCIAS);
+//            aplicarCompetencias.setString(1, listString);
+//            aplicarCompetencias.setInt(2, ULTIMO_ID_INT);
+//            aplicarCompetencias.executeUpdate();
 
             ultimoID.close();
             salvarCandidato.close();
-            aplicarCompetencias.close();
+//            aplicarCompetencias.close();
             return "O candidato foi inserido com sucesso";
 
 

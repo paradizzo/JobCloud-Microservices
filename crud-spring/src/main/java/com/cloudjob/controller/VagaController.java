@@ -25,7 +25,7 @@ public class VagaController {
     @GetMapping
     public @ResponseBody
     Object list() {
-        String BUSCAR_VAGAS = "SELECT JSON_AGG(vagas) AS vaga FROM(SELECT vagas.id, vagas.nome, vagas.descricao, vagas.estado, vagas.cidade, vagas.id_empresas, vagas.competencias FROM vagas) vagas";
+        String BUSCAR_VAGAS = "SELECT JSON_AGG(vagas) AS vaga FROM(SELECT vagas.id, vagas.nome, vagas.descricao, vagas.estado, vagas.cidade, vagas.angular, vagas.groovy, vagas.typescript, vagas.java, vagas.python FROM vagas) vagas";
         try {
             Connection conn = connection.conexao();
             PreparedStatement vaga = conn.prepareStatement(BUSCAR_VAGAS, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);

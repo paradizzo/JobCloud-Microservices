@@ -22,7 +22,7 @@ public class CandidatoController {
     @GetMapping
     public @ResponseBody
     Object list() {
-        String BUSCAR_CANDIDATOS = "SELECT JSON_AGG(candidatos) AS candidato FROM(SELECT candidatos.id, candidatos.nome, candidatos.sobrenome, candidatos.data_de_nascimento, candidatos.email, candidatos.cpf, candidatos.pais, candidatos.cep, candidatos.descricao, candidatos.senha, candidatos.competencias FROM candidatos) candidatos";
+        String BUSCAR_CANDIDATOS = "SELECT JSON_AGG(candidatos) AS candidato FROM(SELECT candidatos.id, candidatos.nome, candidatos.sobrenome, candidatos.data_de_nascimento, candidatos.email, candidatos.cpf, candidatos.pais, candidatos.cep, candidatos.descricao, candidatos.senha, candidatos.angular, candidatos.groovy, candidatos.typescript, candidatos.java, candidatos.python FROM candidatos) candidatos";
         try {
             Connection conn = connection.conexao();
             PreparedStatement candidatos = conn.prepareStatement(BUSCAR_CANDIDATOS, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);

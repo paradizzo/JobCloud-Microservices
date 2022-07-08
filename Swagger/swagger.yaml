@@ -1,0 +1,503 @@
+swagger: "2.0"
+info:
+  description: "Essa é a documentação das apis da CloudJob"
+  version: "1.0.0"
+  title: "Cloudjob"
+host: "localhost:8080"
+basePath: "/api"
+tags:
+- name: "Candidato"
+  description: "Tudo sobre os candidatos"
+- name: "Empresa"
+  description: "Acesso as empresas"
+- name: "Vagas"
+  description: "Tudo sobre as vagas"
+schemes:
+- "http"
+paths:
+  /candidatos:
+    post:
+      tags:
+      - "Candidato"
+      summary: "Adiciona um novo candidato"
+      description: ""
+      operationId: "addCandidato"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Objeto de candidato que deve ser inserido"
+        required: true
+        schema:
+          $ref: "#/definitions/Candidato"
+      responses:
+        "405":
+          description: "Invalid input"
+    get:
+      tags:
+      - "Candidato"
+      summary: "Acha todos os candidatos"
+      description: "Retorna todos candidato"
+      operationId: "getCandidatos"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Candidato"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Candidato not found"
+      security:
+      - api_key: []
+  /candidatos/{candidatoId}:
+    get:
+      tags:
+      - "Candidato"
+      summary: "Acha candidato pelo id"
+      description: "Retorna um candidato só"
+      operationId: "getCandidatoById"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "candidatoId"
+        in: "path"
+        description: "ID do candidato para retorno"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Candidato"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Candidato not found"
+      security:
+      - api_key: []
+    delete:
+      tags:
+      - "Candidato"
+      summary: "Dá delete num candidato"
+      description: ""
+      operationId: "deleteCandidato"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "api_key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "candidatoId"
+        in: "path"
+        description: "Candidato id para deletar"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Candidato not found"
+    put:
+      tags:
+      - "Candidato"
+      summary: "Faz update em um candidato existente"
+      description: ""
+      operationId: "updateCandidato"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Candidato precisa estar adicionado"
+        required: true
+        schema:
+          $ref: "#/definitions/Candidato"
+      - name: "candidatoId"
+        in: "path"
+        description: "Candidato id para deletar"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Candidato not found"
+        "405":
+          description: "Validation exception"
+  /empresas:
+    post:
+      tags:
+      - "Empresa"
+      summary: "Adiciona uma nova empresa"
+      description: ""
+      operationId: "addEmpresa"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Objeto de empresa que deve ser inserido"
+        required: true
+        schema:
+          $ref: "#/definitions/Empresa"
+      responses:
+        "405":
+          description: "Invalid input"
+    get:
+      tags:
+      - "Empresa"
+      summary: "Retorna todas as empresas"
+      description: "Retorna todas as empresas"
+      operationId: "getEmpresa"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Empresa"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Empresa not found"
+      security:
+      - api_key: []
+  /empresas/{empresaId}:
+    get:
+      tags:
+      - "Empresa"
+      summary: "Acha empresa pelo id"
+      description: "Retorna uma empresa só"
+      operationId: "getEmpresaById"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "empresaId"
+        in: "path"
+        description: "ID da empresa para retorno"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Empresa"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Empresa not found"
+      security:
+      - api_key: []
+    delete:
+      tags:
+      - "Empresa"
+      summary: "Dá delete numa empresa"
+      description: ""
+      operationId: "deleteEmpresa"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "api_key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "empresaId"
+        in: "path"
+        description: "Empresa id para deletar"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Candidato not found"
+    put:
+      tags:
+      - "Empresa"
+      summary: "Faz update em um empresa existente"
+      description: ""
+      operationId: "updateEmpresa"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Empresa precisa estar adicionado"
+        required: true
+        schema:
+          $ref: "#/definitions/Empresa"
+      - name: "empresaId"
+        in: "path"
+        description: "Empresa id para atualizar"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Empresa not found"
+        "405":
+          description: "Validation exception"
+  
+  /vagas:
+    post:
+      tags:
+      - "Vagas"
+      summary: "Adiciona uma nova vaga"
+      description: ""
+      operationId: "addVaga"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Objeto de vaga que deve ser inserido"
+        required: true
+        schema:
+          $ref: "#/definitions/Vaga"
+      responses:
+        "405":
+          description: "Invalid input"
+    get:
+      tags:
+      - "Vagas"
+      summary: "Acha todas as vagas"
+      description: "Retorna todas as vagas"
+      operationId: "getVaga"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Vaga"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Vaga not found"
+      security:
+      - api_key: []
+  /vagas/{vagaId}:
+    get:
+      tags:
+      - "Vagas"
+      summary: "Acha vaga pelo id"
+      description: "Retorna uma vaga só"
+      operationId: "getVagaById"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "vagaId"
+        in: "path"
+        description: "ID da vaga para retorno"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Vaga"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Vaga not found"
+      security:
+      - api_key: []
+    delete:
+      tags:
+      - "Vagas"
+      summary: "Dá delete numa vaga"
+      description: ""
+      operationId: "deleteVaga"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "api_key"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "vagaId"
+        in: "path"
+        description: "Vaga id para deletar"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Vaga not found"
+    put:
+        tags:
+        - "Vagas"
+        summary: "Faz update em uma vaga existente"
+        description: ""
+        operationId: "updateVaga"
+        consumes:
+        - "application/json"
+        - "application/xml"
+        produces:
+        - "application/xml"
+        - "application/json"
+        parameters:
+        - in: "body"
+          name: "body"
+          description: "Vaga precisa estar adicionado"
+          required: true
+          schema:
+            $ref: "#/definitions/Vaga"
+        - name: "vagaId"
+          in: "path"
+          description: "Vaga id para atualizar"
+          required: true
+          type: "integer"
+          format: "int64"
+        responses:
+          "400":
+            description: "Invalid ID supplied"
+          "404":
+            description: "Vaga not found"
+          "405":
+            description: "Validation exception"
+securityDefinitions:
+  petstore_auth:
+    type: "oauth2"
+    authorizationUrl: "http://petstore.swagger.io/oauth/dialog"
+    flow: "implicit"
+    scopes:
+      write:pets: "modify pets in your account"
+      read:pets: "read your pets"
+  api_key:
+    type: "apiKey"
+    name: "api_key"
+    in: "header"
+definitions:
+  Candidato:
+    type: "object"
+    properties:
+      nome:
+        type: "string"
+      sobrenome:
+        type: "string"
+      dataDeNascimento:
+        type: "string"
+      email:
+        type: "string"
+      cpf:
+        type: "string"
+      pais:
+        type: "string"
+      cep:
+        type: "string"
+      descricao:
+        type: "string"
+      senha:
+        type: "string"
+      angular:
+        type: "boolean"
+        default: false 
+      java:
+        type: "boolean"
+        default: false 
+      groovy:
+        type: "boolean"
+        default: false 
+      typescript:
+        type: "boolean"
+        default: false 
+      python:
+        type: "boolean"
+        default: false 
+  Empresa:
+    type: "object"
+    properties:
+      nome:
+        type: "string"
+      email:
+        type: "string"
+      cnpj:
+        type: "string"
+      pais:
+        type: "string"
+      cep:
+        type: "string"
+      senha:
+        type: "string"
+  Vaga:
+    type: "object"
+    properties:
+      nome:
+        type: "string"
+      descricao:
+        type: "string"
+      estado:
+        type: "string"
+      cidade: 
+        type: "string"
+      angular:
+        type: "boolean"
+        default: false 
+      java:
+        type: "boolean"
+        default: false 
+      groovy:
+        type: "boolean"
+        default: false 
+      typescript:
+        type: "boolean"
+        default: false 
+      python:
+        type: "boolean"
+        default: false 
+      
+  ApiResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      type:
+        type: "string"
+      message:
+        type: "string"
