@@ -44,7 +44,6 @@ Adição do Spock para testes unitários, nada além disso foi adicionado ou ret
 Com certeza deve estar faltando alguma coisa que eu simplesmente me esqueci de adicionar aos testes, mas vou assumir que está tudo certo pelo fato de todos passarem.
 
 
-<<<<<<< HEAD
 # Swagger
 
 Adição do Swagger, a documentação está conjunta porém com alguns adendos. 
@@ -65,7 +64,7 @@ Como o Grails estava mal configurado, durante a criação do mesmo as configura�
 Como eu fiz o Spring antes, e era obrigatoriedade apenas esses dois métodos, esses são os que ficarão, pelo fato do restrição de tempo e de que provavelmente eu não usarei o Spring futuramente, tendo preferido muito mais o Grails. 
 Algumas refatorações foram feitas no Spring para se adequarem ao " novo banco de dados ", leia essa frase com muitas aspas.
 A parte do Swagger que corresponde ao: securityDefinitions não foi alterado do próprio Swagger editor.
-=======
+
 # Grails
 
 Adição do crud com grails, basicamente a mesma coisa do Spring, criação dos endpoints por grails, algumas mudanças tiveram de ser feitas ( Ou o GRAILS FEZ SOZINHO ) ao banco de dados, então mudei o banco de dados temporariamente, provavlemente até a trilha de Micronaut, onde ficará em sua forma definitiva. 
@@ -73,3 +72,7 @@ Mudei também algumas coisas no front end, mas ainda sem login, provavelmente a 
 
 Uma  coisa que esqueci de comentar que vale para todas as trilhas, quando for rodar a aplicação em Angular, não use o ng serve, use ng serve --proxy-config proxy.conf.js 
 Isso vai evitar problema de CORS.
+
+
+Como eu fiz o Spring antes, e era obrigatoriedade apenas esses dois métodos, esses são os que ficarão, pelo fato do restrição de tempo e de que provavelmente eu não usarei o Spring futuramente, tendo preferido muito mais o Grails. Algumas refatorações foram feitas no Spring para se adequarem ao " novo banco de dados ", leia essa frase com muitas aspas. A parte do Swagger que corresponde ao: securityDefinitions não foi alterado do próprio Swagger editor.
+
