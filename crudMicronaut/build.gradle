@@ -1,0 +1,49 @@
+plugins {
+    id("groovy") 
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("io.micronaut.application") version "3.4.1"
+}
+
+version = "0.1"
+group = "com.cloudjob"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.micronaut:micronaut-http-server-netty:3.5.1'
+    implementation 'io.micronaut:micronaut-runtime:3.5.1'
+    implementation 'io.micronaut:micronaut-inject-java:3.5.1'
+    implementation 'io.micronaut:micronaut-inject:1.3.4'
+    implementation 'io.micronaut:micronaut-validation:3.5.1'
+    implementation 'io.micronaut.data:micronaut-data-processor:3.4.2'
+    implementation 'io.micronaut.data:micronaut-data-hibernate-jpa:3.4.2'
+    runtimeOnly 'com.h2database:h2:2.1.212'
+    runtimeOnly 'io.micronaut.configuration:micronaut-jdbc-tomcat:2.2.6'
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.4.0'
+    implementation("io.micronaut.beanvalidation:micronaut-hibernate-validator")
+
+}
+
+
+application {
+    mainClass.set("com.cloudjob.Application")
+}
+java {
+    sourceCompatibility = JavaVersion.toVersion("17")
+    targetCompatibility = JavaVersion.toVersion("17")
+}
+
+graalvmNative.toolchainDetection = false
+micronaut {
+    runtime("netty")
+    testRuntime("spock2")
+    processing {
+        incremental(true)
+        annotations("com.cloudjob.*")
+    }
+}
+
+
+

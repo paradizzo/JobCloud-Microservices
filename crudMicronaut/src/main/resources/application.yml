@@ -1,0 +1,33 @@
+micronaut:
+  application:
+    name: crudMicronaut
+  server:
+    cors:
+      enabled: true
+      configurations:
+        web:
+          allowedOrigins:
+            - http://localhost:4200
+netty:
+  default:
+    allocator:
+      max-order: 3
+
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/linketinder?currentSchema=public&user=postgres&password=paradizo123
+    driverClassName: org.postgresql.Driver
+    username: "postgres"
+    password: "paradizo123"
+    schema-generate: UPDATE
+
+jpa:
+  default:
+    entity-scan:
+      packages: 'com.cloudjob.model'
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true
+        format_sql: true
