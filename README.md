@@ -77,9 +77,9 @@ Isso vai evitar problema de CORS.
 Como eu fiz o Spring antes, e era obrigatoriedade apenas esses dois métodos, esses são os que ficarão, pelo fato do restrição de tempo e de que provavelmente eu não usarei o Spring futuramente, tendo preferido muito mais o Grails. Algumas refatorações foram feitas no Spring para se adequarem ao " novo banco de dados ", leia essa frase com muitas aspas. A parte do Swagger que corresponde ao: securityDefinitions não foi alterado do próprio Swagger editor.
 
 
-## Micronaut
+# Micronaut
 
-# Adição do Micronaut
+## Adição do Micronaut
 Nessa trilha, a integração é feita com Micronaut, alguns bugs podem ser destacados, sendo esses:
 - Algumas vezes o endpoint vai simplesmente dar erro, quando reiniciado o servidor tudo volta ao normal
 - Algumas vezes o Angular não vai registrar o primeiro click em um candidato ou vaga
