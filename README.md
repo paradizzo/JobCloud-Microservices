@@ -85,3 +85,21 @@ Nessa trilha, a integração é feita com Micronaut, alguns bugs podem ser desta
 - Algumas vezes o Angular não vai registrar o primeiro click em um candidato ou vaga
 
 Uma trilha curta, fazendo basicamente as mesmas coisas que as outras trilhas, vou deixar pra adicionar os últimos featuras quando sobrar tempo, a agenda tá curta.
+
+
+
+# Kafka
+
+## Adição do Kafka
+Essa trilha foi para adição Kafka e comunicação por mensageria.
+
+## Como iniciar
+Primeiramente, abra um servidor do Zookeeper, depois abra o kafka na porta 9092, após isso comece o host do MICRONAUT, é nele que criei um producer, então, abra a pasta KAFKA e comece a aplicação principal, logo após isso comece o host do Angular, insira um novo candidato com um email da sua escolha, logo após isso crie uma vaga e o email deverá chegar sem problemas.
+
+## Bugs 
+- Typescript tag não é transportada para box de  " Descrição da vaga "
+- Email com a table de baixo não aparece
+Segue imagem do bug ( que eu apelidei carinhosamente de IDENTIDADE DE BRAND ) :
+![mail](https://user-images.githubusercontent.com/80402261/179337328-2d139e19-852f-41dd-a7f1-5a9481de4ca8.png)
+
+
