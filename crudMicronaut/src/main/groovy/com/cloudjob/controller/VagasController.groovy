@@ -34,6 +34,7 @@ class VagasController {
     @Post("/vagas")
     HttpResponse<Vaga> save(@Body @Valid Vaga vaga){
         vagaService.save(vaga)
+        Kafka.enviaInfo(vaga)
         return HttpResponse
                 .created(vaga)
     }

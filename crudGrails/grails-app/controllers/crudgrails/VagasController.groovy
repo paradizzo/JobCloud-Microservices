@@ -14,7 +14,6 @@ import grails.gorm.transactions.Transactional
 class VagasController {
 
     VagasService vagasService
-
     static responseFormats = ['json', 'xml']
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
