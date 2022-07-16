@@ -99,7 +99,10 @@ Primeiramente, abra um servidor do Zookeeper, depois abra o kafka na porta 9092,
 ## Bugs 
 - Typescript tag não é transportada para box de  " Descrição da vaga "
 - Email com a table de baixo não aparece
+
+
 Segue imagem do bug ( que eu apelidei carinhosamente de IDENTIDADE DE BRAND ) :
+
 ![mail](https://user-images.githubusercontent.com/80402261/179337328-2d139e19-852f-41dd-a7f1-5a9481de4ca8.png)
 
 
